@@ -1,2 +1,3 @@
 # DataStructuresWithPython
-My sample codes to practicing data structures in python
+My sample codes for practicing data structures in python
+@author: Harshita Jhavar
