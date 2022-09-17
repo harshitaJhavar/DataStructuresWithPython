@@ -155,7 +155,61 @@ LQ.rotate()
 LQ.enque(6)
 print(LQ.deque())
 '''
+'''
 #Doubly Linked List
+
+class DoublyLinkedBase:
+    class Node:
+        __slots__ = 'element', 'prev', 'next'
+        def __init__(self, element, prev, next):
+            self.element = element
+            self.prev = prev
+            self.next = next
+
+    def __init__(self):
+        self.header = self.Node(None, None, None)
+        self.trailer = self.Node(None, None, None)
+        self.header.next = self.trailer
+        self.trailer.prev = self.header
+        self.size = 0
+
+    def insertBetween(self, e, predecessor, successor):
+        newest = self.Node(e, predecessor, successor)
+        predecessor.next = newest
+        successor.prev = newest
+        self.size += 1
+        return newest
+
+    def deleteNode(self, node):
+        node.next.prev = node.prev
+        node.prev.next = node.next
+        self.size -= 1
+        element = node.element
+        node.prev = node.next = node.element = None
+        print(element)
+        return element
+
+DB = DoublyLinkedBase()
+DB.insertBetween(2,DB.header, DB.trailer)
+DB.insertBetween(4,DB.header, DB.trailer)
+DB.insertBetween(7,DB.header, DB.trailer)
+DB.insertBetween(3,DB.header, DB.trailer)
+DB.deleteNode (DB.trailer.prev)
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

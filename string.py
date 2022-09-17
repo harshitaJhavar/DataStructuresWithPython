@@ -1,3 +1,4 @@
+'''
 def commonString (s, t):
     if(s.find(t) >= 0):
         return(s)
@@ -19,3 +20,4 @@ def commonString (s, t):
 
 print(commonString('champak', 'pakbhu'))
 
+'''
